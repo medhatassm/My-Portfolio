@@ -1,7 +1,6 @@
 /* Start Variables */
 :root {
     --main-color:#FF4801;
-    --nav-color:#ff4801;
     --section-padding: 100px;
     --main-padding-top: 100px;
     --main-padding-bottom: 100px;
@@ -26,10 +25,16 @@ ul {
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     font-family: "Cairo", sans-serif;
     background-color: black;
     font-family: "Poppins", sans-serif;
+    color: white;
 }
 
 .container {
@@ -81,7 +86,6 @@ header .nav_bar{
 
 header .nav_bar .logo{
     font-size: 40px;
-    color: white;
     letter-spacing: 2px;
     font-weight: bold;
     
@@ -140,8 +144,6 @@ header .nav_bar ul , header .side_navbar ul{
 }
 
 header .nav_bar ul li a , header .side_navbar ul a{
-    text-decoration: none;
-    color: white;
     font-weight: lighter;
     position: relative;
 }
@@ -179,9 +181,14 @@ header .nav_bar ul li .btn , header .side_navbar ul li .btn{
 }
 
 
+    header .side_navbar ul li .btn{
+        background-color: black;
+    }
+
+
 
 header .side_navbar{
-    border: 2px solid var(--nav-color);
+    background-color: var(--main-color);
     width: 0;
     height: 80vh;
     position: absolute;
@@ -192,6 +199,7 @@ header .side_navbar{
     justify-content: center;
     align-items: center;
     transition: 0.5s;
+    z-index: 99;
     display: none;
 }
 
@@ -221,3 +229,143 @@ header .hamburger_menu i {
     }
 }
 /* End Header */
+/* Start Landscape */
+.landscape .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.landscape .container .content{
+    margin-bottom: 100px;
+}
+@media (max-width: 991px) {
+    .landscape .container{
+        flex-direction: column-reverse;
+    }
+
+    .landscape .container .content{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .landscape .container{
+        align-items: flex-start;
+    }
+}
+.landscape .container h1{
+    font-weight: 500;
+    font-size: 50px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .landscape .container h1{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+}
+.landscape .container h1::before{
+    content: 'Hello, I am';
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(3%) translateY(-165%);
+    background-color: var(--main-color);
+    padding: 20px 40px;
+    font-weight: lighter;
+
+}
+
+@media (max-width: 991px) {
+    .landscape .container h1::before{
+        font-size: 16px;
+        padding: 10px 20px;
+        transform: translateX(35%) translateY(-165%);
+    }
+}
+.landscape .container h1::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    top: -50%;
+    margin-top: -11px;
+    left: 0;
+    transform: translateX(235%) rotate(-90deg);
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent var(--main-color) transparent transparent;
+    
+
+}
+.landscape .container p{
+    font-weight: lighter;
+}
+
+@media (max-width: 1200px) {
+    .landscape .container p{
+        font-size: 12px;
+    }
+}
+.landscape .container ul{
+    display: flex;
+    margin-top: 100px;
+    gap: 20px;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .landscape .container ul{
+        justify-content: center;
+        align-items: center;
+    }
+}
+.landscape .container ul li:first-child a{
+    background: var(--main-color);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.landscape .container ul li:last-child a{
+    border: 1px solid white;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+    .landscape .container ul{
+        margin-top: 50px;
+    }
+
+    .landscape .container ul li:first-child a ,
+    .landscape .container ul li:last-child a{
+        padding: 15px 30px;
+        font-size: 14px;
+    }
+}
+
+.landscape .container img{
+    width: 600px;
+}
+
+@media (max-width: 1200px) {
+    .landscape .container img{
+        width: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .landscape .container img{
+        width: 300px;
+        margin: 0 auto;
+    }
+}
+/* End Landscape */
