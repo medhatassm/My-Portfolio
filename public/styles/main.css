@@ -1,6 +1,7 @@
 /* Start Variables */
 :root {
     --main-color:#FF4801;
+    --nav-color:#ff4801;
     --section-padding: 100px;
     --main-padding-top: 100px;
     --main-padding-bottom: 100px;
@@ -56,7 +57,7 @@ body {
 /* Large */
 @media (min-width: 1200px) {
     .container {
-        width: 1200px;
+        width: 1170px;
     }
 }
 
@@ -133,7 +134,7 @@ header .nav_bar ul , header .side_navbar ul{
     }
     header .side_navbar ul{
         flex-direction: column;
-        gap: 35px;
+        gap: 50px;
         text-align: center;
     }
 }
@@ -177,16 +178,14 @@ header .nav_bar ul li .btn , header .side_navbar ul li .btn{
     font-weight: normal;
 }
 
-header .side_navbar ul li .btn{
-    background-color: black;
-}
+
 
 header .side_navbar{
-    background-color: #FF4801;
+    border: 2px solid var(--nav-color);
     width: 0;
     height: 80vh;
     position: absolute;
-    right: 0;
+    right: -5px;
     border-radius: 50px 0 0 50px;
     margin-top: 20px;
     display: flex;
@@ -207,15 +206,17 @@ header .side_navbar ul{
         display: flex;
     }
 }
-
+header .hamburger_menu {
+    display: none;
+}
 header .hamburger_menu i {
     color: var(--main-color);
     font-size: 20px;
-    display: none;
+    
 }
 
 @media (max-width: 767px) {
-    header .hamburger_menu i{
+    header .hamburger_menu{
         display: block;
     }
 }
