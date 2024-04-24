@@ -8,10 +8,14 @@ hamburgerMenu.onclick = () => {
     case "300px":
       sideNavbar.style.width = "";
       sNavList.style.opacity = "0";
+      setTimeout(() => {
+        sideNavbar.style.right = "";
+      }, 500);
 
       break;
     case "":
       sideNavbar.style.width = "300px";
+      sideNavbar.style.right = "0";
       sNavList.style.opacity = "100%";
 
       break;
